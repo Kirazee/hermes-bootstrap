@@ -48,6 +48,9 @@ systemctl --user enable --now hermes-gateway 2>/dev/null \
   && ok "gateway aktif" || warn "unit gateway belum ada, coba: hermes gateway start"
 loginctl enable-linger "$USER" 2>/dev/null && ok "linger aktif (auto-start setelah reboot)"
 
+# script pemulihan ikut di dalam backup zip (bin/), tapi pastikan bisa dieksekusi
+chmod +x ~/.hermes/bin/*.sh 2>/dev/null && ok "script ~/.hermes/bin/ siap dieksekusi"
+
 printf '\n\033[1mSELESAI\033[0m — cek Telegram, bot sudah nyambung lagi.\n'
 printf 'Lanjut: kirim pesan "restore vps" ke bot, lalu ikuti instruksinya.\n'
 printf 'Verifikasi manual: hermes doctor | hermes gateway status\n'
