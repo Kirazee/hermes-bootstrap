@@ -1,9 +1,12 @@
 # hermes-bootstrap
 
-Bootstrap VPS baru setelah VPS lama mati: install Hermes, import otak (memory/skill/cron/token), nyalakan gateway.
+Bootstrap VPS baru setelah VPS lama mati: install Hermes, import otak (memory/skill/cron/token), nyalakan gateway. Tanpa secret.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Kirazee/hermes-bootstrap/main/bootstrap-hermes.sh | bash -s -- ~/hermes-backup-YYYY-MM-DD.zip
+cd ~
+curl -fsSL -o bootstrap-hermes.sh https://raw.githubusercontent.com/Kirazee/hermes-bootstrap/refs/heads/main/bootstrap-hermes.sh
+curl -fsSL -o hermes-backup-latest.zip https://raw.githubusercontent.com/Kirazee/hermes-bootstrap/refs/heads/main/bootstrap-hermes.sh  # GANTI dengan zip dari Telegram
+bash bootstrap-hermes.sh ~/hermes-backup-YYYY-MM-DD.zip
 ```
 
-Tanpa secret. Backup zip didapat dari DM Telegram bot.
+Backup zip diambil dari DM Telegram bot (@sasaherbot).
